@@ -69,8 +69,8 @@ impl<'a> FontFamily<'a> {
     /// This can be used as the value of `font-family` attribute in SVG.
     pub fn as_str(&self) -> &str {
         match self {
-            FontFamily::Serif => "serif",
-            FontFamily::SansSerif => "sans-serif",
+            FontFamily::Serif => "宋体",
+            FontFamily::SansSerif => "宋体",
             FontFamily::Monospace => "monospace",
             FontFamily::Name(face) => face,
         }

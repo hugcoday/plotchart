@@ -1,7 +1,7 @@
 /*!
   The style for shapes and text, font, color, etc.
 */
-mod color;
+pub mod color;
 pub mod colors;
 mod font;
 mod palette;

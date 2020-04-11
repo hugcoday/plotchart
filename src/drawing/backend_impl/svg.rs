@@ -124,7 +124,6 @@ impl<'a> SVGBackend<'a> {
             &[
                 ("width", &format!("{}", size.0)),
                 ("height", &format!("{}", size.1)),
-                ("viewBox", &format!("0 0 {} {}", size.0, size.1)),
                 ("xmlns", "http://www.w3.org/2000/svg"),
             ],
             false,
@@ -431,7 +430,7 @@ impl<'a> DrawingBackend for SVGBackend<'a> {
         let mut attrs = vec![
             ("x", format!("{}", x0)),
             ("y", format!("{}", y0)),
-            ("dy", dy.to_owned()),
+            ("dy", format!("{}", dy)),
             ("text-anchor", text_anchor.to_string()),
             ("font-family", font.get_name().to_string()),
             ("font-size", format!("{}", font.get_size() / 1.24)),
@@ -566,8 +565,7 @@ impl<'a> DrawingBackend for SVGBackend<'a> {
 impl Drop for SVGBackend<'_> {
     fn drop(&mut self) {
         if !self.saved {
-            // drop should not panic, so we ignore a failed present
-            let _ = self.present();
+            self.present().expect("Unable to save the SVG image");
         }
     }
 }

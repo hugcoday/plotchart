@@ -122,7 +122,7 @@ impl<'a, 'b, DB: DrawingBackend + 'a, CT: CoordTranslate> SeriesLabelStyle<'a, '
 
         // TODO: Issue #68 Currently generic font family doesn't load on OSX, change this after the issue
         // resolved
-        let default_font = ("sans-serif", 12).into_font();
+        let default_font = ("宋体", 12).into_font();
         let default_style: TextStyle = default_font.into();
 
         let font = {
