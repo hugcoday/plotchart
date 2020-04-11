@@ -1,11 +1,11 @@
 [package]
-name = "plotters"
+name = "plotchart"
 version = "0.2.12"
-authors = ["Hao Hou <haohou302@gmail.com>"]
+authors = ["hugcoday<hugcoday@gmail.com>"]
 edition = "2018"
 license = "MIT"
 description = "A Rust drawing library focus on data plotting for both WASM and native applications"
-repository = "https://github.com/38/plotters"
+repository = "https://github.com/hugcoday/plotchart"
 keywords = ["WebAssembly", "Visualization", "Plotting", "Drawing"]
 categories = ["visualization", "wasm"]
 readme = "README.md"
